@@ -22,10 +22,6 @@ function App() {
           >
             Open Facebook
           </button>
-          <button onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
-            Open Google
-          </button>
-          <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
           <button onClick={() => Auth.signOut()}>Sign Out</button>
         </div>
       </header>
