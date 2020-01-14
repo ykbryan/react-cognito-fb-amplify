@@ -14,8 +14,7 @@
         "categories": {
             "auth": {
                 "reactcognitofbamplifccfba7d1ccfba7d1": {
-                    "facebookAppId": "3782960885107590",
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"3782960885107590\",\"client_secret\":\"f0feac9ea3776aca929e91983c150ee7\"}]"
+                    "facebookAppId": "3782960885107590"
                 }
             }
         }

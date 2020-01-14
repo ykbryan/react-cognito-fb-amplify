@@ -43,7 +43,7 @@
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": "{}",
-    "hostedUI": true,
+    "hostedUI": false,
     "userPoolGroupList": [],
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -61,11 +61,5 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": [],
-    "hostedUIDomainName": "bryanchua",
-    "authProvidersUserPool": [
-        "Facebook"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://cognito.bryanchua.io/\",\"https://cognito.bryanchua.io/auth/\"],\"LogoutURLs\":[\"https://cognito.bryanchua.io/logout/\"]}"
+    "dependsOn": []
 }
