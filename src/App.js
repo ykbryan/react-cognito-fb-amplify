@@ -15,25 +15,20 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+
+        <div className='App'>
+          <button
+            onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}
+          >
+            Open Facebook
+          </button>
+          <button onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
+            Open Google
+          </button>
+          <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
+          <button onClick={() => Auth.signOut()}>Sign Out</button>
+        </div>
       </header>
-      <div className='App'>
-        <button onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}>
-          Open Facebook
-        </button>
-        <button onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
-          Open Google
-        </button>
-        <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
-        <button onClick={() => Auth.signOut()}>Sign Out</button>
-      </div>
     </div>
   );
 }

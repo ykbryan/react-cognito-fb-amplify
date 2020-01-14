@@ -1,9 +1,9 @@
 {
-    "auth": {
-        "reactcognitofbamplifccfba7d1ccfba7d1": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": []
-        }
-    }
+	"auth": {
+		"reactcognitofbamplifebe59ef9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
 }

@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "reactcognitofbamplifccfba7d1_identitypool_ccfba7d1",
+    "identityPoolName": "reactcognitofbamplifebe59ef9_identitypool_ebe59ef9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "reactcccfba7d1",
-    "userPoolName": "reactcognitofbamplifccfba7d1_userpool_ccfba7d1",
+    "resourceNameTruncated": "reactcebe59ef9",
+    "userPoolName": "reactcognitofbamplifebe59ef9_userpool_ebe59ef9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,23 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "reactcccfba7d1_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "reactcebe59ef9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "useDefault": "manual",
+    "resourceName": "reactcognitofbamplifebe59ef9",
     "authSelections": "identityPoolAndUserPool",
-    "resourceName": "reactcognitofbamplifccfba7d1ccfba7d1",
-    "thirdPartyAuth": true,
-    "authProviders": [
-        "graph.facebook.com"
-    ],
-    "usernameAttributes": [
-        "email"
-    ],
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": "{}",
-    "hostedUI": false,
-    "userPoolGroupList": [],
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -57,6 +44,19 @@
             "Arn"
         ]
     },
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
+    "usernameAttributes": [
+        "email"
+    ],
+    "triggers": "{}",
+    "hostedUIDomainName": "bryanchua",
+    "authProvidersUserPool": [
+        "Facebook"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://cognito.bryanchua.io/\"],\"LogoutURLs\":[\"https://cognito.bryanchua.io/\"]}",
+    "userPoolGroupList": [],
     "parentStack": {
         "Ref": "AWS::StackId"
     },
