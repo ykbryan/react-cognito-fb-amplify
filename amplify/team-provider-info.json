@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-reactcognitofbamplif-dev-193409-authRole",
+            "UnauthRoleArn": "arn:aws:iam::566416766292:role/amplify-reactcognitofbamplif-dev-193409-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::566416766292:role/amplify-reactcognitofbamplif-dev-193409-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "amplify-reactcognitofbamplif-dev-193409-deployment",
+            "UnauthRoleName": "amplify-reactcognitofbamplif-dev-193409-unauthRole",
+            "StackName": "amplify-reactcognitofbamplif-dev-193409",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:566416766292:stack/amplify-reactcognitofbamplif-dev-193409/c8a70b00-36c1-11ea-be18-06a52c6ee8f8",
+            "AmplifyAppId": "d1t1cddlb2w4ff"
+        },
+        "categories": {
+            "auth": {
+                "reactcognitofbamplifccfba7d1ccfba7d1": {
+                    "facebookAppId": "3782960885107590",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"3782960885107590\",\"client_secret\":\"f0feac9ea3776aca929e91983c150ee7\"}]"
+                }
+            }
+        }
+    }
+}
