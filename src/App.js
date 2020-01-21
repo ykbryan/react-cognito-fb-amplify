@@ -7,7 +7,16 @@ import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 
 function App() {
-  let [user, setUser] = useState();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    Hub.listen('auth', data => {
+      console.log(data);
+      const { payload } = data;
+      console.log(payload);
+    });
+  }, []);
+
   return (
     <div className='App'>
       <header className='App-header'>
