@@ -15,7 +15,7 @@ function App() {
       const { payload } = data;
       switch (payload.event) {
         case 'signIn':
-          setUser(payload.data);
+          checkUser();
           break;
 
         default:
@@ -31,7 +31,10 @@ function App() {
 
   function checkUser() {
     Auth.currentAuthenticatedUser()
-      .then(user => console.log({ user }))
+      .then(data => {
+        setUser(data.user);
+        console.log({ data });
+      })
       .catch(err => console.log(err));
   }
 
