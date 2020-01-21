@@ -13,9 +13,21 @@ function App() {
     Hub.listen('auth', data => {
       console.log(data);
       const { payload } = data;
-      console.log(payload);
+      switch (payload.event) {
+        case 'signIn':
+          setUser(payload.data);
+          break;
+
+        default:
+          setUser(null);
+          break;
+      }
     });
   }, []);
+
+  function renderUsername() {
+    if (user) return <h2>{user.username}</h2>;
+  }
 
   return (
     <div className='App'>
@@ -24,6 +36,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        {renderUsername()}
 
         <div className='App'>
           <button
