@@ -29,6 +29,12 @@ function App() {
     if (user) return <h2>{user.username}</h2>;
   }
 
+  function checkUser() {
+    Auth.currentAuthenticatedUser()
+      .then(user => console.log({ user }))
+      .catch(err => console.log(err));
+  }
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -45,6 +51,7 @@ function App() {
             Open Facebook
           </button>
           <button onClick={() => Auth.signOut()}>Sign Out</button>
+          <button onClick={checkUser}>Check User</button>
         </div>
       </header>
     </div>
