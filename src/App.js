@@ -8,9 +8,11 @@ Amplify.configure(awsconfig);
 
 function App() {
   const [user, setUser] = useState();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
-    Hub.listen('auth', data => {
+    Hub.listen('auth', (data) => {
       console.log(data);
       const { payload } = data;
       switch (payload.event) {
@@ -31,12 +33,22 @@ function App() {
 
   function checkUser() {
     Auth.currentAuthenticatedUser()
-      .then(data => {
+      .then((data) => {
         setUser(data.user);
         console.log({ data });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
+
+  const submitRegistration = (e) => {
+    e.preventDefault();
+    console.log(username, password);
+  };
+
+  const submitLogin = (e) => {
+    e.preventDefault();
+    console.log(username, password);
+  };
 
   return (
     <div className='App'>
@@ -48,13 +60,50 @@ function App() {
         {renderUsername()}
 
         <div className='App'>
-          <button
-            onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}
-          >
-            Open Facebook
-          </button>
-          <button onClick={() => Auth.signOut()}>Sign Out</button>
-          <button onClick={checkUser}>Check User</button>
+          <p>
+            <button
+              onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}
+            >
+              Open Facebook
+            </button>
+            <button onClick={() => Auth.signOut()}>Sign Out</button>
+            <button onClick={checkUser}>Check User</button>
+          </p>
+          <h2>Work in progress: forms</h2>
+          <div>
+            <form id='registerForm' onSubmit={submitRegistration}>
+              <input
+                type='text'
+                name='username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                type='password'
+                name='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input type='submit' value='sign up' />
+            </form>
+          </div>
+          <div>
+            <form id='loginForm' onSubmit={submitLogin}>
+              <input
+                type='text'
+                name='username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                type='password'
+                name='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input type='submit' value='sign in' />
+            </form>
+          </div>
         </div>
       </header>
     </div>
